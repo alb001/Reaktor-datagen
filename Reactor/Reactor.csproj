@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AD417247-4815-4987-A07E-004025653B63}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Reactor</RootNamespace>
+    <AssemblyName>Reactor</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>True</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>True</Externalconsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="System\CondenserPump.cs" />
+    <Compile Include="System\Core.cs" />
+    <Compile Include="Physics\Kilogram.cs" />
+    <Compile Include="Physics\Joule.cs" />
+    <Compile Include="Physics\Kelvin.cs" />
+    <Compile Include="Physics\HeatCapacity.cs" />
+    <Compile Include="Materials\DemiWater.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Materials\Neutron.cs" />
+    <Compile Include="Materials\UraniumCell.cs" />
+    <Compile Include="Materials\Material.cs" />
+    <Compile Include="Design\Fuel.cs" />
+    <Compile Include="Design\Coolant.cs" />
+    <Compile Include="Design\Moderator.cs" />
+    <Compile Include="Design\ControlRod.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Physics\" />
+    <Folder Include="System\" />
+    <Folder Include="Materials\" />
+    <Folder Include="Design\" />
+  </ItemGroup>
+</Project>
